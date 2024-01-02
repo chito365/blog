@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_25_105357) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.integer "user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_25_105357) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   add_foreign_key "comments", "posts"
